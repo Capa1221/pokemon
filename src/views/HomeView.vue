@@ -1,18 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    {{
+      pokemons
+    }}
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PokemonServices from '@/services/PokemonServices';
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      pokemons: [
+
+      ], 
+    }
+  },
+  async created(){
+   this.pokemons= await PokemonServices.getPokemons();
   }
 }
 </script>
