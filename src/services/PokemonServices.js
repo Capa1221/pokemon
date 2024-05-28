@@ -11,5 +11,18 @@ export default{
                 console.log(error)
             }
         )
-    }
+    },
+    async getPokemonsDetail(name){
+        return await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+        .then(response =>{
+            return response.data
+
+        })
+        .catch(
+            error => {
+                console.log(error)
+            }
+        )
+
+    }   
 }
