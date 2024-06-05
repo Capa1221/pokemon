@@ -36,7 +36,7 @@ export default {
   },
   async created() {
     this.pokemon = await PokemonServices.getPokemonsDetail(this.name);
-    this.displayedMoves = this.pokemon.moves.slice(0, 10); // Limitar a los primeros 10 movimientos para simplicidad
+    this.displayedMoves = this.pokemon.moves.slice(0, 10); 
   },
 };
 </script>
